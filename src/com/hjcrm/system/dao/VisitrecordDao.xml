@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.dao.VisitrecordDao">
+    <insert id="addVisitrecord" parameterType="visitrecord">
+        insert into hj_visitrecord(visitRecordid,userid,resourceId,visitRecord,create_time)
+        values (null,#{userid},#{resourceId},#{visitRecord},#{create_time})
+    </insert>
+    <select id="selectVisitrecord" parameterType="int" resultType="Visitrecord">
+        select * from hj_visitrecord where resourceId=#{rid};
+    </select>
+</mapper>

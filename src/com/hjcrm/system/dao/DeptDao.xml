@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.dao.DeptDao">
+    <select id="queryDeptList" resultType="dept">
+        select deptid,deptparaid,deptname from hj_dept;
+    </select>
+
+    <select id="findDepts" parameterType="com.hjcrm.publics.utils.PageBean" resultType="dept">
+        select a.deptid,a.deptparaid,a.deptname,b.deptname deptParaname,a.deptcode from hj_dept a left join hj_dept b on a.deptparaid=b.deptid
+        limit #{currentPage},#{pageSize}
+    </select>
+
+    <select id="queryCountDept" resultType="int">
+        select count(deptid) from hj_dept;
+    </select>
+
+    <insert id="saveOrUpdate" parameterType="dept">
+        insert into hj_dept(deptid,deptparaid,deptname,deptcode) values (null,#{deptparaid},#{deptname},#{deptcode})
+    </insert>
+
+    <update id="saveOrUpdate2" parameterType="dept">
+        update hj_dept set <if test="deptparaid!=null and deptparaid!=0 ">deptparaid=#{deptparaid},</if>
+        deptname=#{deptname},deptcode=#{deptcode} where deptid=#{deptid}
+    </update>
+    
+    <delete id="deleteDept" parameterType="java.util.List">
+        delete from hj_dept where deptid in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectRoleBydeptid" parameterType="int" resultType="java.lang.Integer">
+        select roleid from hj_role where deptid=#{deptid}
+    </select>
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.dao.RoleDao">
+    <select id="queryRoleByDeptid" parameterType="int" resultType="role">
+        select roleid,rolename from hj_dept d join hj_role r on  d.deptid=r.deptid where  r.deptid=#{did};
+    </select>
+    
+    <select id="queryAllRole" parameterType="com.hjcrm.publics.utils.PageBean" resultType="role">
+        select r.roleid,r.rolename,d.deptname,group_concat(menuname separator ',') menuname
+        from hj_role r left join hj_role_menu rm on r.roleid = rm.roleid
+        left join hj_menu m on m.menuid=rm.menuid
+        left join hj_dept d on d.deptid=r.deptid group by r.roleid
+        limit #{currentPage},#{pageSize};
+    </select>
+    <select id="queryCountRole" resultType="int">
+        select count(roleid) from hj_role;
+    </select>
+
+    <insert id="addOrUpdateRole" parameterType="role">
+        insert  into hj_role(roleid,rolename,deptid) values (null,#{rolename},#{deptid})
+    </insert>
+
+    <update id="addOrUpdateRole2" parameterType="role">
+        update hj_role set rolename=#{rolename},deptid=#{deptid} where roleid=#{roleid}
+    </update>
+
+    <delete id="deleteRole" parameterType="java.util.List">
+        delete from hj_role where roleid in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <delete id="deleteRoleMenu" parameterType="java.util.List">
+        delete from hj_role_menu where roleid in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <insert id="addRoleMenu" parameterType="roleForMenu">
+        insert  into hj_role_menu values (null,#{roleid},#{menuid},0)
+    </insert>
+
+    <delete id="deleteRolMenuByRid" parameterType="int">
+        delete from hj_role_menu where roleid=#{roleid}
+    </delete>
+</mapper>

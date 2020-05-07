@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.dao.MyPatterDao">
+    <select id="queryPatter" parameterType="patter" resultType="patter">
+        select
+        p.patterid,p.userid,p.roleid,p.courseid,p.patterTypeId,p.contentTypeId,p.shortTitle,
+        p.content,p.create_time,p.update_time,p.update_id,p.isshare,p.note,p.dr,
+        u.username username
+        from hj_patter p
+        left join hj_user u on u.userid = p.userid
+        where 1=1 and p.dr = 0
+        <if test="patterTypeId != null">
+            and p.patterTypeId = #{patterTypeId}
+        </if>
+        and (p.isshare = 1 or (p.isshare = 0 and p.userid = #{userid}))
+    </select>
+
+    <select id="queryPatterType" parameterType="patter" resultType="patterType">
+        select patterTypeId,patterTypeName,courseid from hj_pattertype where
+        courseid=#{courseid}
+    </select>
+    
+    <update id="updatePatter" parameterType="patter">
+        update hj_patter set shortTitle=#{shortTitle},content=#{content} where patterid=#{patterid}
+    </update>
+
+    <delete id="deletePatter">
+        delete from hj_patter where userid=#{userid} and patterid in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <insert id="addPatter" parameterType="patter">
+        insert into hj_patter(patterid,userid,roleid,courseid,patterTypeId,shortTitle,content)
+        values (null ,#{userid},#{roleid},#{courseid},#{patterTypeId},#{shortTitle},#{content})
+    </insert>
+
+    <update id="updatePatterIsShare" parameterType="int">
+        update hj_patter set isshare=1 where patterid=#{patterid}
+    </update>
+</mapper>

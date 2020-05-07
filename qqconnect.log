@@ -1,0 +1,443 @@
+812  DEBUG [2019-12-06 20:49:51]  Creating instance of bean 'menuService'
+812  DEBUG [2019-12-06 20:49:51]  Registered injected element on class [com.hjcrm.system.service.impl.MenuServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.MenuDao com.hjcrm.system.service.impl.MenuServiceImpl.menuDao
+812  DEBUG [2019-12-06 20:49:51]  Eagerly caching bean 'menuService' to allow for resolving potential circular references
+816  DEBUG [2019-12-06 20:49:51]  Processing injected element of bean 'menuService': AutowiredFieldElement for private com.hjcrm.system.dao.MenuDao com.hjcrm.system.service.impl.MenuServiceImpl.menuDao
+816  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'menuDao'
+816  DEBUG [2019-12-06 20:49:51]  Autowiring by type from bean name 'menuService' to bean named 'menuDao'
+816  DEBUG [2019-12-06 20:49:51]  Finished creating instance of bean 'menuService'
+816  DEBUG [2019-12-06 20:49:51]  Creating shared instance of singleton bean 'userService'
+816  DEBUG [2019-12-06 20:49:51]  Creating instance of bean 'userService'
+816  DEBUG [2019-12-06 20:49:51]  Registered injected element on class [com.hjcrm.system.service.impl.UserServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.UserDao com.hjcrm.system.service.impl.UserServiceImpl.userDao
+816  DEBUG [2019-12-06 20:49:51]  Eagerly caching bean 'userService' to allow for resolving potential circular references
+820  DEBUG [2019-12-06 20:49:51]  Processing injected element of bean 'userService': AutowiredFieldElement for private com.hjcrm.system.dao.UserDao com.hjcrm.system.service.impl.UserServiceImpl.userDao
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'userDao'
+820  DEBUG [2019-12-06 20:49:51]  Autowiring by type from bean name 'userService' to bean named 'userDao'
+820  DEBUG [2019-12-06 20:49:51]  Finished creating instance of bean 'userService'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'dataSource'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'sqlSessionFactory'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'mapperScanner'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'deptDao'
+820  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'menuDao'
+824  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'roleDao'
+824  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'userDao'
+824  DEBUG [2019-12-06 20:49:51]  Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@62ddbd7e]
+824  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'lifecycleProcessor'
+828  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'sqlSessionFactory'
+828  DEBUG [2019-12-06 20:49:51]  Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+828  DEBUG [2019-12-06 20:49:51]  Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+832  DEBUG [2019-12-06 20:49:51]  Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+832  DEBUG [2019-12-06 20:49:51]  Returning cached instance of singleton bean 'roleDao'
+836  DEBUG [2019-12-06 20:49:51]  Creating a new SqlSession
+843  DEBUG [2019-12-06 20:49:51]  SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20d525] was not registered for synchronization because synchronization is not active
+851  DEBUG [2019-12-06 20:49:51]  Fetching JDBC Connection from DataSource
+1171 DEBUG [2019-12-06 20:49:52]  JDBC Connection [jdbc:mysql://localhost:3306/hj_crm?useUnicode=true&characterEncoding=utf-8, UserName=root@localhost, MySQL Connector Java] will not be managed by Spring
+1175 DEBUG [2019-12-06 20:49:52]  ==>  Preparing: select r.roleid,r.rolename,d.deptname,group_concat(menuname separator ',') menuname from hj_role r left join hj_role_menu rm on r.roleid = rm.roleid left join hj_menu m on m.menuid=rm.menuid left join hj_dept d on d.deptid=r.deptid group by r.roleid; 
+1199 DEBUG [2019-12-06 20:49:52]  ==> Parameters: 
+1222 DEBUG [2019-12-06 20:49:52]  <==      Total: 54
+1222 DEBUG [2019-12-06 20:49:52]  Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20d525]
+1222 DEBUG [2019-12-06 20:49:52]  Returning JDBC Connection to DataSource
+0    DEBUG [2019-12-06 20:52:21]  Adding [systemProperties] PropertySource with lowest search precedence
+4    DEBUG [2019-12-06 20:52:21]  Adding [systemEnvironment] PropertySource with lowest search precedence
+4    DEBUG [2019-12-06 20:52:21]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+4    INFO  [2019-12-06 20:52:21]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@59690aa4: startup date [Fri Dec 06 20:52:21 CST 2019]; root of context hierarchy
+47   DEBUG [2019-12-06 20:52:21]  Adding [systemProperties] PropertySource with lowest search precedence
+47   DEBUG [2019-12-06 20:52:21]  Adding [systemEnvironment] PropertySource with lowest search precedence
+47   DEBUG [2019-12-06 20:52:21]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+55   INFO  [2019-12-06 20:52:21]  Loading XML bean definitions from class path resource [applicationContext.xml]
+71   DEBUG [2019-12-06 20:52:21]  Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+90   DEBUG [2019-12-06 20:52:21]  Loading schema mappings from [META-INF/spring.schemas]
+94   DEBUG [2019-12-06 20:52:21]  Loaded schema mappings: {http://mybatis.org/schema/mybatis-spring-1.2.xsd=org/mybatis/spring/config/mybatis-spring-1.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.2.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd=org/springframework/web/servlet/config/spring-mvc-3.1.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.2.xsd=com/googlecode/ehcache/annotations/ehcache-spring-1.2.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.2.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://www.springframework.org/schema/tx/spring-tx-3.2.xsd=org/springframework/transaction/config/spring-tx-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/util/spring-util-3.2.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/lang/spring-lang-3.2.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd=org/springframework/web/servlet/config/spring-mvc-3.0.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/cache/spring-cache-3.2.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd=com/googlecode/ehcache/annotations/ehcache-spring-1.1.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://mybatis.org/schema/mybatis-spring.xsd=org/mybatis/spring/config/mybatis-spring-1.2.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-3.2.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/aop/spring-aop-3.2.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-3.1.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.0.xsd=com/googlecode/ehcache/annotations/ehcache-spring-1.0.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/mvc/spring-mvc.xsd=org/springframework/web/servlet/config/spring-mvc-3.2.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd=org/springframework/web/servlet/config/spring-mvc-3.2.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.2.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/task/spring-task-3.2.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd=org/springframework/jdbc/config/spring-jdbc-3.2.xsd, http://www.springframework.org/schema/tool/spring-tool-3.2.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd}
+98   DEBUG [2019-12-06 20:52:21]  Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.0.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.0.xsd
+129  DEBUG [2019-12-06 20:52:22]  Found XML schema [http://www.springframework.org/schema/context/spring-context-3.0.xsd] in classpath: org/springframework/context/config/spring-context-3.0.xsd
+137  DEBUG [2019-12-06 20:52:22]  Found XML schema [http://www.springframework.org/schema/tool/spring-tool-3.0.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-3.0.xsd
+145  DEBUG [2019-12-06 20:52:22]  Loading bean definitions
+161  DEBUG [2019-12-06 20:52:22]  Loaded NamespaceHandler mappings: {http://www.springframework.org/schema/p=org.springframework.beans.factory.xml.SimplePropertyNamespaceHandler, http://www.springframework.org/schema/mvc=org.springframework.web.servlet.config.MvcNamespaceHandler, http://www.springframework.org/schema/util=org.springframework.beans.factory.xml.UtilNamespaceHandler, http://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler, http://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler, http://www.springframework.org/schema/jdbc=org.springframework.jdbc.config.JdbcNamespaceHandler, http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring=com.googlecode.ehcache.annotations.config.AnnotationDrivenEhCacheNamespaceHandler, http://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler, http://mybatis.org/schema/mybatis-spring=org.mybatis.spring.config.NamespaceHandler, http://www.springframework.org/schema/c=org.springframework.beans.factory.xml.SimpleConstructorNamespaceHandler, http://www.springframework.org/schema/tx=org.springframework.transaction.config.TxNamespaceHandler, http://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler, http://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler, http://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler}
+168  DEBUG [2019-12-06 20:52:22]  Adding [systemProperties] PropertySource with lowest search precedence
+168  DEBUG [2019-12-06 20:52:22]  Adding [systemEnvironment] PropertySource with lowest search precedence
+168  DEBUG [2019-12-06 20:52:22]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+180  DEBUG [2019-12-06 20:52:22]  Looking for matching resources in directory tree [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system]
+180  DEBUG [2019-12-06 20:52:22]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+180  DEBUG [2019-12-06 20:52:22]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+180  DEBUG [2019-12-06 20:52:22]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+184  DEBUG [2019-12-06 20:52:22]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+184  DEBUG [2019-12-06 20:52:22]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+184  DEBUG [2019-12-06 20:52:22]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+184  DEBUG [2019-12-06 20:52:22]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\test] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+184  DEBUG [2019-12-06 20:52:22]  Resolved location pattern [classpath*:com/hjcrm/system/**/*.class] to resources [file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean\Dept.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean\Menu.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean\Role.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean\User.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\DeptController.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\MnuController.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\RoleController.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\UserControl.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\UserController.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\DeptDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\MenuDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\RoleDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\UserDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\DeptService.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\DeptServiceImpl.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\MenuServiceImpl.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\UserServiceImpl.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\MenuService.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\UserService.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\test\Test.class]]
+207  DEBUG [2019-12-06 20:52:22]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\DeptServiceImpl.class]
+207  DEBUG [2019-12-06 20:52:22]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\MenuServiceImpl.class]
+207  DEBUG [2019-12-06 20:52:22]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\UserServiceImpl.class]
+219  DEBUG [2019-12-06 20:52:22]  Loaded 11 bean definitions from location pattern [applicationContext.xml]
+219  DEBUG [2019-12-06 20:52:22]  Bean factory for org.springframework.context.support.ClassPathXmlApplicationContext@59690aa4: org.springframework.beans.factory.support.DefaultListableBeanFactory@86be70a: defining beans [propertyConfigurer,deptService,menuService,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,mapperScanner]; root of factory hierarchy
+231  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+231  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+242  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+242  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+242  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'mapperScanner'
+242  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'mapperScanner'
+242  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'mapperScanner' to allow for resolving potential circular references
+270  DEBUG [2019-12-06 20:52:22]  Invoking afterPropertiesSet() on bean with name 'mapperScanner'
+270  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'mapperScanner'
+289  DEBUG [2019-12-06 20:52:22]  Adding [systemProperties] PropertySource with lowest search precedence
+289  DEBUG [2019-12-06 20:52:22]  Adding [systemEnvironment] PropertySource with lowest search precedence
+289  DEBUG [2019-12-06 20:52:22]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+293  DEBUG [2019-12-06 20:52:22]  Looking for matching resources in directory tree [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao]
+293  DEBUG [2019-12-06 20:52:22]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/dao/**/*.class]
+293  DEBUG [2019-12-06 20:52:22]  Resolved location pattern [classpath*:com/hjcrm/system/dao/**/*.class] to resources [file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\DeptDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\MenuDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\RoleDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\UserDao.class]]
+293  DEBUG [2019-12-06 20:52:22]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\DeptDao.class]
+293  DEBUG [2019-12-06 20:52:22]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\MenuDao.class]
+293  DEBUG [2019-12-06 20:52:22]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\RoleDao.class]
+297  DEBUG [2019-12-06 20:52:22]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\UserDao.class]
+297  DEBUG [2019-12-06 20:52:22]  Creating MapperFactoryBean with name 'deptDao' and 'com.hjcrm.system.dao.DeptDao' mapperInterface
+297  DEBUG [2019-12-06 20:52:22]  Creating MapperFactoryBean with name 'menuDao' and 'com.hjcrm.system.dao.MenuDao' mapperInterface
+297  DEBUG [2019-12-06 20:52:22]  Creating MapperFactoryBean with name 'roleDao' and 'com.hjcrm.system.dao.RoleDao' mapperInterface
+297  DEBUG [2019-12-06 20:52:22]  Creating MapperFactoryBean with name 'userDao' and 'com.hjcrm.system.dao.UserDao' mapperInterface
+297  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'propertyConfigurer'
+297  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'propertyConfigurer'
+301  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'propertyConfigurer' to allow for resolving potential circular references
+305  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'propertyConfigurer'
+305  INFO  [2019-12-06 20:52:22]  Loading properties file from class path resource [jdbc.properties]
+309  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+309  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+309  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+309  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+309  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+309  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+309  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+309  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+309  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+309  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+313  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+313  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+313  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+313  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+313  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor' to allow for resolving potential circular references
+313  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+317  DEBUG [2019-12-06 20:52:22]  Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@f0f2775]
+317  DEBUG [2019-12-06 20:52:22]  Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@4461c7e3]
+317  INFO  [2019-12-06 20:52:22]  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@86be70a: defining beans [propertyConfigurer,deptService,menuService,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,mapperScanner,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,deptDao,menuDao,roleDao,userDao]; root of factory hierarchy
+317  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'propertyConfigurer'
+317  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'deptService'
+317  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'deptService'
+321  DEBUG [2019-12-06 20:52:22]  Registered injected element on class [com.hjcrm.system.service.impl.DeptServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.DeptDao com.hjcrm.system.service.impl.DeptServiceImpl.deptDao
+321  DEBUG [2019-12-06 20:52:22]  Registered injected element on class [com.hjcrm.system.service.impl.DeptServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.RoleDao com.hjcrm.system.service.impl.DeptServiceImpl.roleDao
+321  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'deptService' to allow for resolving potential circular references
+324  DEBUG [2019-12-06 20:52:22]  Processing injected element of bean 'deptService': AutowiredFieldElement for private com.hjcrm.system.dao.DeptDao com.hjcrm.system.service.impl.DeptServiceImpl.deptDao
+332  DEBUG [2019-12-06 20:52:22]  Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+336  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'deptDao'
+336  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'deptDao'
+336  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'deptDao' to allow for resolving potential circular references
+336  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'sqlSessionFactory'
+336  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'sqlSessionFactory'
+344  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'sqlSessionFactory' to allow for resolving potential circular references
+344  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'dataSource'
+344  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'dataSource'
+352  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'dataSource' to allow for resolving potential circular references
+360  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'dataSource'
+364  DEBUG [2019-12-06 20:52:22]  Invoking afterPropertiesSet() on bean with name 'sqlSessionFactory'
+410  DEBUG [2019-12-06 20:52:22]  Class not found: org.jboss.vfs.VFS
+410  DEBUG [2019-12-06 20:52:22]  JBoss 6 VFS API is not available in this environment.
+410  DEBUG [2019-12-06 20:52:22]  Class not found: org.jboss.vfs.VirtualFile
+410  DEBUG [2019-12-06 20:52:22]  VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+410  DEBUG [2019-12-06 20:52:22]  Using VFS adapter org.apache.ibatis.io.DefaultVFS
+410  DEBUG [2019-12-06 20:52:22]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean
+410  DEBUG [2019-12-06 20:52:22]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean
+449  DEBUG [2019-12-06 20:52:22]  Reader entry: Dept.class
+449  DEBUG [2019-12-06 20:52:22]  Reader entry: Menu.class
+449  DEBUG [2019-12-06 20:52:22]  Reader entry: Role.class
+449  DEBUG [2019-12-06 20:52:22]  Reader entry: User.class
+449  DEBUG [2019-12-06 20:52:22]  Listing file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean
+449  DEBUG [2019-12-06 20:52:22]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Dept.class
+449  DEBUG [2019-12-06 20:52:22]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Dept.class
+449  DEBUG [2019-12-06 20:52:22]  Reader entry: ����   4 l
+453  DEBUG [2019-12-06 20:52:22]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Menu.class
+453  DEBUG [2019-12-06 20:52:22]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Menu.class
+453  DEBUG [2019-12-06 20:52:22]  Reader entry: ����   4 �	 % m
+453  DEBUG [2019-12-06 20:52:22]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Role.class
+453  DEBUG [2019-12-06 20:52:22]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Role.class
+457  DEBUG [2019-12-06 20:52:22]  Reader entry: ����   4 s
+457  DEBUG [2019-12-06 20:52:22]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/User.class
+457  DEBUG [2019-12-06 20:52:22]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/User.class
+461  DEBUG [2019-12-06 20:52:22]  Reader entry: ����   4 �
+461  DEBUG [2019-12-06 20:52:22]  Checking to see if class com.hjcrm.system.bean.Dept matches criteria [is assignable to Object]
+461  DEBUG [2019-12-06 20:52:22]  Checking to see if class com.hjcrm.system.bean.Menu matches criteria [is assignable to Object]
+461  DEBUG [2019-12-06 20:52:22]  Checking to see if class com.hjcrm.system.bean.Role matches criteria [is assignable to Object]
+461  DEBUG [2019-12-06 20:52:22]  Checking to see if class com.hjcrm.system.bean.User matches criteria [is assignable to Object]
+465  DEBUG [2019-12-06 20:52:22]  Parsed configuration file: 'class path resource [mybatis-config.xml]'
+469  DEBUG [2019-12-06 20:52:22]  Property 'mapperLocations' was not specified or no matching resources found
+469  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'sqlSessionFactory'
+477  DEBUG [2019-12-06 20:52:22]  Invoking afterPropertiesSet() on bean with name 'deptDao'
+559  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'deptDao'
+559  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'menuDao'
+559  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'menuDao'
+559  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'menuDao' to allow for resolving potential circular references
+559  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'sqlSessionFactory'
+559  DEBUG [2019-12-06 20:52:22]  Invoking afterPropertiesSet() on bean with name 'menuDao'
+582  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'menuDao'
+582  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'roleDao'
+582  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'roleDao'
+582  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'roleDao' to allow for resolving potential circular references
+582  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'sqlSessionFactory'
+582  DEBUG [2019-12-06 20:52:22]  Invoking afterPropertiesSet() on bean with name 'roleDao'
+602  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'roleDao'
+602  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'userDao'
+602  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'userDao'
+602  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'userDao' to allow for resolving potential circular references
+602  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'sqlSessionFactory'
+602  DEBUG [2019-12-06 20:52:22]  Invoking afterPropertiesSet() on bean with name 'userDao'
+680  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'userDao'
+684  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'deptDao'
+684  DEBUG [2019-12-06 20:52:22]  Autowiring by type from bean name 'deptService' to bean named 'deptDao'
+688  DEBUG [2019-12-06 20:52:22]  Processing injected element of bean 'deptService': AutowiredFieldElement for private com.hjcrm.system.dao.RoleDao com.hjcrm.system.service.impl.DeptServiceImpl.roleDao
+688  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'roleDao'
+688  DEBUG [2019-12-06 20:52:22]  Autowiring by type from bean name 'deptService' to bean named 'roleDao'
+688  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'deptService'
+688  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'menuService'
+688  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'menuService'
+691  DEBUG [2019-12-06 20:52:22]  Registered injected element on class [com.hjcrm.system.service.impl.MenuServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.MenuDao com.hjcrm.system.service.impl.MenuServiceImpl.menuDao
+691  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'menuService' to allow for resolving potential circular references
+695  DEBUG [2019-12-06 20:52:22]  Processing injected element of bean 'menuService': AutowiredFieldElement for private com.hjcrm.system.dao.MenuDao com.hjcrm.system.service.impl.MenuServiceImpl.menuDao
+695  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'menuDao'
+699  DEBUG [2019-12-06 20:52:22]  Autowiring by type from bean name 'menuService' to bean named 'menuDao'
+699  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'menuService'
+699  DEBUG [2019-12-06 20:52:22]  Creating shared instance of singleton bean 'userService'
+699  DEBUG [2019-12-06 20:52:22]  Creating instance of bean 'userService'
+699  DEBUG [2019-12-06 20:52:22]  Registered injected element on class [com.hjcrm.system.service.impl.UserServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.UserDao com.hjcrm.system.service.impl.UserServiceImpl.userDao
+699  DEBUG [2019-12-06 20:52:22]  Eagerly caching bean 'userService' to allow for resolving potential circular references
+707  DEBUG [2019-12-06 20:52:22]  Processing injected element of bean 'userService': AutowiredFieldElement for private com.hjcrm.system.dao.UserDao com.hjcrm.system.service.impl.UserServiceImpl.userDao
+707  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'userDao'
+707  DEBUG [2019-12-06 20:52:22]  Autowiring by type from bean name 'userService' to bean named 'userDao'
+711  DEBUG [2019-12-06 20:52:22]  Finished creating instance of bean 'userService'
+711  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+711  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+711  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+711  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+711  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'dataSource'
+711  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'sqlSessionFactory'
+711  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'mapperScanner'
+715  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+715  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'deptDao'
+715  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'menuDao'
+715  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'roleDao'
+715  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'userDao'
+719  DEBUG [2019-12-06 20:52:22]  Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@62ddbd7e]
+719  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'lifecycleProcessor'
+727  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'sqlSessionFactory'
+730  DEBUG [2019-12-06 20:52:22]  Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+730  DEBUG [2019-12-06 20:52:22]  Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+730  DEBUG [2019-12-06 20:52:22]  Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+730  DEBUG [2019-12-06 20:52:22]  Returning cached instance of singleton bean 'roleDao'
+738  DEBUG [2019-12-06 20:52:22]  Creating a new SqlSession
+750  DEBUG [2019-12-06 20:52:22]  SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20d525] was not registered for synchronization because synchronization is not active
+766  DEBUG [2019-12-06 20:52:22]  Fetching JDBC Connection from DataSource
+1187 DEBUG [2019-12-06 20:52:23]  JDBC Connection [jdbc:mysql://localhost:3306/hj_crm?useUnicode=true&characterEncoding=utf-8, UserName=root@localhost, MySQL Connector Java] will not be managed by Spring
+1191 DEBUG [2019-12-06 20:52:23]  ==>  Preparing: select r.roleid,r.rolename,d.deptname,group_concat(menuname separator ',') menuname from hj_role r left join hj_role_menu rm on r.roleid = rm.roleid left join hj_menu m on m.menuid=rm.menuid left join hj_dept d on d.deptid=r.deptid group by r.roleid; 
+1211 DEBUG [2019-12-06 20:52:23]  ==> Parameters: 
+1234 DEBUG [2019-12-06 20:52:23]  <==      Total: 54
+1234 DEBUG [2019-12-06 20:52:23]  Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20d525]
+1234 DEBUG [2019-12-06 20:52:23]  Returning JDBC Connection to DataSource
+0    DEBUG [2019-12-06 20:52:49]  Adding [systemProperties] PropertySource with lowest search precedence
+4    DEBUG [2019-12-06 20:52:49]  Adding [systemEnvironment] PropertySource with lowest search precedence
+4    DEBUG [2019-12-06 20:52:49]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+8    INFO  [2019-12-06 20:52:49]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@59690aa4: startup date [Fri Dec 06 20:52:49 CST 2019]; root of context hierarchy
+54   DEBUG [2019-12-06 20:52:49]  Adding [systemProperties] PropertySource with lowest search precedence
+54   DEBUG [2019-12-06 20:52:49]  Adding [systemEnvironment] PropertySource with lowest search precedence
+54   DEBUG [2019-12-06 20:52:49]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+62   INFO  [2019-12-06 20:52:49]  Loading XML bean definitions from class path resource [applicationContext.xml]
+74   DEBUG [2019-12-06 20:52:49]  Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+101  DEBUG [2019-12-06 20:52:49]  Loading schema mappings from [META-INF/spring.schemas]
+105  DEBUG [2019-12-06 20:52:49]  Loaded schema mappings: {http://mybatis.org/schema/mybatis-spring-1.2.xsd=org/mybatis/spring/config/mybatis-spring-1.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.2.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd=org/springframework/web/servlet/config/spring-mvc-3.1.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.2.xsd=com/googlecode/ehcache/annotations/ehcache-spring-1.2.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.2.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://www.springframework.org/schema/tx/spring-tx-3.2.xsd=org/springframework/transaction/config/spring-tx-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/util/spring-util-3.2.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/lang/spring-lang-3.2.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd=org/springframework/web/servlet/config/spring-mvc-3.0.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/cache/spring-cache-3.2.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd=com/googlecode/ehcache/annotations/ehcache-spring-1.1.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://mybatis.org/schema/mybatis-spring.xsd=org/mybatis/spring/config/mybatis-spring-1.2.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-3.2.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/aop/spring-aop-3.2.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-3.1.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.0.xsd=com/googlecode/ehcache/annotations/ehcache-spring-1.0.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/mvc/spring-mvc.xsd=org/springframework/web/servlet/config/spring-mvc-3.2.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd=org/springframework/web/servlet/config/spring-mvc-3.2.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.2.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/task/spring-task-3.2.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd=org/springframework/jdbc/config/spring-jdbc-3.2.xsd, http://www.springframework.org/schema/tool/spring-tool-3.2.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd}
+109  DEBUG [2019-12-06 20:52:49]  Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.0.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.0.xsd
+144  DEBUG [2019-12-06 20:52:49]  Found XML schema [http://www.springframework.org/schema/context/spring-context-3.0.xsd] in classpath: org/springframework/context/config/spring-context-3.0.xsd
+148  DEBUG [2019-12-06 20:52:49]  Found XML schema [http://www.springframework.org/schema/tool/spring-tool-3.0.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-3.0.xsd
+160  DEBUG [2019-12-06 20:52:49]  Loading bean definitions
+176  DEBUG [2019-12-06 20:52:49]  Loaded NamespaceHandler mappings: {http://www.springframework.org/schema/p=org.springframework.beans.factory.xml.SimplePropertyNamespaceHandler, http://www.springframework.org/schema/mvc=org.springframework.web.servlet.config.MvcNamespaceHandler, http://www.springframework.org/schema/util=org.springframework.beans.factory.xml.UtilNamespaceHandler, http://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler, http://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler, http://www.springframework.org/schema/jdbc=org.springframework.jdbc.config.JdbcNamespaceHandler, http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring=com.googlecode.ehcache.annotations.config.AnnotationDrivenEhCacheNamespaceHandler, http://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler, http://mybatis.org/schema/mybatis-spring=org.mybatis.spring.config.NamespaceHandler, http://www.springframework.org/schema/c=org.springframework.beans.factory.xml.SimpleConstructorNamespaceHandler, http://www.springframework.org/schema/tx=org.springframework.transaction.config.TxNamespaceHandler, http://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler, http://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler, http://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler}
+187  DEBUG [2019-12-06 20:52:49]  Adding [systemProperties] PropertySource with lowest search precedence
+187  DEBUG [2019-12-06 20:52:49]  Adding [systemEnvironment] PropertySource with lowest search precedence
+187  DEBUG [2019-12-06 20:52:49]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+203  DEBUG [2019-12-06 20:52:49]  Looking for matching resources in directory tree [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system]
+203  DEBUG [2019-12-06 20:52:49]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+207  DEBUG [2019-12-06 20:52:49]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+207  DEBUG [2019-12-06 20:52:49]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+207  DEBUG [2019-12-06 20:52:49]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+211  DEBUG [2019-12-06 20:52:49]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+211  DEBUG [2019-12-06 20:52:49]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+211  DEBUG [2019-12-06 20:52:49]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\test] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/**/*.class]
+215  DEBUG [2019-12-06 20:52:49]  Resolved location pattern [classpath*:com/hjcrm/system/**/*.class] to resources [file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean\Dept.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean\Menu.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean\Role.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\bean\User.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\DeptController.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\MnuController.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\RoleController.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\UserControl.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\controllers\UserController.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\DeptDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\MenuDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\RoleDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\UserDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\DeptService.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\DeptServiceImpl.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\MenuServiceImpl.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\UserServiceImpl.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\MenuService.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\UserService.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\test\Test.class]]
+250  DEBUG [2019-12-06 20:52:49]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\DeptServiceImpl.class]
+250  DEBUG [2019-12-06 20:52:49]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\MenuServiceImpl.class]
+250  DEBUG [2019-12-06 20:52:49]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\service\impl\UserServiceImpl.class]
+265  DEBUG [2019-12-06 20:52:49]  Loaded 11 bean definitions from location pattern [applicationContext.xml]
+265  DEBUG [2019-12-06 20:52:49]  Bean factory for org.springframework.context.support.ClassPathXmlApplicationContext@59690aa4: org.springframework.beans.factory.support.DefaultListableBeanFactory@86be70a: defining beans [propertyConfigurer,deptService,menuService,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,mapperScanner]; root of factory hierarchy
+277  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+277  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+289  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+293  DEBUG [2019-12-06 20:52:49]  Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+293  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'mapperScanner'
+293  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'mapperScanner'
+293  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'mapperScanner' to allow for resolving potential circular references
+312  DEBUG [2019-12-06 20:52:49]  Invoking afterPropertiesSet() on bean with name 'mapperScanner'
+312  DEBUG [2019-12-06 20:52:49]  Finished creating instance of bean 'mapperScanner'
+332  DEBUG [2019-12-06 20:52:49]  Adding [systemProperties] PropertySource with lowest search precedence
+336  DEBUG [2019-12-06 20:52:49]  Adding [systemEnvironment] PropertySource with lowest search precedence
+336  DEBUG [2019-12-06 20:52:49]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+336  DEBUG [2019-12-06 20:52:49]  Looking for matching resources in directory tree [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao]
+336  DEBUG [2019-12-06 20:52:49]  Searching directory [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao] for files matching pattern [C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/dao/**/*.class]
+336  DEBUG [2019-12-06 20:52:49]  Resolved location pattern [classpath*:com/hjcrm/system/dao/**/*.class] to resources [file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\DeptDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\MenuDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\RoleDao.class], file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\UserDao.class]]
+336  DEBUG [2019-12-06 20:52:49]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\DeptDao.class]
+336  DEBUG [2019-12-06 20:52:49]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\MenuDao.class]
+336  DEBUG [2019-12-06 20:52:49]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\RoleDao.class]
+339  DEBUG [2019-12-06 20:52:49]  Identified candidate component class: file [C:\blbjava01\ideaworkspace\webproject\out\production\webproject\com\hjcrm\system\dao\UserDao.class]
+339  DEBUG [2019-12-06 20:52:49]  Creating MapperFactoryBean with name 'deptDao' and 'com.hjcrm.system.dao.DeptDao' mapperInterface
+339  DEBUG [2019-12-06 20:52:49]  Creating MapperFactoryBean with name 'menuDao' and 'com.hjcrm.system.dao.MenuDao' mapperInterface
+339  DEBUG [2019-12-06 20:52:49]  Creating MapperFactoryBean with name 'roleDao' and 'com.hjcrm.system.dao.RoleDao' mapperInterface
+339  DEBUG [2019-12-06 20:52:49]  Creating MapperFactoryBean with name 'userDao' and 'com.hjcrm.system.dao.UserDao' mapperInterface
+339  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'propertyConfigurer'
+339  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'propertyConfigurer'
+343  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'propertyConfigurer' to allow for resolving potential circular references
+347  DEBUG [2019-12-06 20:52:49]  Finished creating instance of bean 'propertyConfigurer'
+347  INFO  [2019-12-06 20:52:49]  Loading properties file from class path resource [jdbc.properties]
+351  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+351  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+351  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+351  DEBUG [2019-12-06 20:52:49]  Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+351  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+351  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+351  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+351  DEBUG [2019-12-06 20:52:49]  Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+351  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+351  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+355  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+355  DEBUG [2019-12-06 20:52:49]  Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+355  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+355  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+355  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor' to allow for resolving potential circular references
+355  DEBUG [2019-12-06 20:52:49]  Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+355  DEBUG [2019-12-06 20:52:49]  Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@f0f2775]
+355  DEBUG [2019-12-06 20:52:49]  Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@4461c7e3]
+359  INFO  [2019-12-06 20:52:49]  Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@86be70a: defining beans [propertyConfigurer,deptService,menuService,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,mapperScanner,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,deptDao,menuDao,roleDao,userDao]; root of factory hierarchy
+359  DEBUG [2019-12-06 20:52:49]  Returning cached instance of singleton bean 'propertyConfigurer'
+359  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'deptService'
+359  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'deptService'
+363  DEBUG [2019-12-06 20:52:49]  Registered injected element on class [com.hjcrm.system.service.impl.DeptServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.DeptDao com.hjcrm.system.service.impl.DeptServiceImpl.deptDao
+363  DEBUG [2019-12-06 20:52:49]  Registered injected element on class [com.hjcrm.system.service.impl.DeptServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.RoleDao com.hjcrm.system.service.impl.DeptServiceImpl.roleDao
+363  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'deptService' to allow for resolving potential circular references
+363  DEBUG [2019-12-06 20:52:49]  Processing injected element of bean 'deptService': AutowiredFieldElement for private com.hjcrm.system.dao.DeptDao com.hjcrm.system.service.impl.DeptServiceImpl.deptDao
+371  DEBUG [2019-12-06 20:52:49]  Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+375  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'deptDao'
+375  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'deptDao'
+375  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'deptDao' to allow for resolving potential circular references
+379  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'sqlSessionFactory'
+379  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'sqlSessionFactory'
+382  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'sqlSessionFactory' to allow for resolving potential circular references
+386  DEBUG [2019-12-06 20:52:49]  Creating shared instance of singleton bean 'dataSource'
+386  DEBUG [2019-12-06 20:52:49]  Creating instance of bean 'dataSource'
+394  DEBUG [2019-12-06 20:52:49]  Eagerly caching bean 'dataSource' to allow for resolving potential circular references
+402  DEBUG [2019-12-06 20:52:49]  Finished creating instance of bean 'dataSource'
+406  DEBUG [2019-12-06 20:52:49]  Invoking afterPropertiesSet() on bean with name 'sqlSessionFactory'
+468  DEBUG [2019-12-06 20:52:49]  Class not found: org.jboss.vfs.VFS
+468  DEBUG [2019-12-06 20:52:49]  JBoss 6 VFS API is not available in this environment.
+468  DEBUG [2019-12-06 20:52:49]  Class not found: org.jboss.vfs.VirtualFile
+468  DEBUG [2019-12-06 20:52:49]  VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+468  DEBUG [2019-12-06 20:52:49]  Using VFS adapter org.apache.ibatis.io.DefaultVFS
+472  DEBUG [2019-12-06 20:52:49]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean
+472  DEBUG [2019-12-06 20:52:49]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean
+507  DEBUG [2019-12-06 20:52:49]  Reader entry: Dept.class
+507  DEBUG [2019-12-06 20:52:49]  Reader entry: Menu.class
+507  DEBUG [2019-12-06 20:52:49]  Reader entry: Role.class
+507  DEBUG [2019-12-06 20:52:49]  Reader entry: User.class
+511  DEBUG [2019-12-06 20:52:49]  Listing file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean
+511  DEBUG [2019-12-06 20:52:49]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Dept.class
+511  DEBUG [2019-12-06 20:52:49]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Dept.class
+511  DEBUG [2019-12-06 20:52:49]  Reader entry: ����   4 l
+511  DEBUG [2019-12-06 20:52:49]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Menu.class
+511  DEBUG [2019-12-06 20:52:49]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Menu.class
+511  DEBUG [2019-12-06 20:52:49]  Reader entry: ����   4 �	 % m
+511  DEBUG [2019-12-06 20:52:49]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Role.class
+511  DEBUG [2019-12-06 20:52:49]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/Role.class
+515  DEBUG [2019-12-06 20:52:49]  Reader entry: ����   4 s
+515  DEBUG [2019-12-06 20:52:49]  Find JAR URL: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/User.class
+515  DEBUG [2019-12-06 20:52:49]  Not a JAR: file:/C:/blbjava01/ideaworkspace/webproject/out/production/webproject/com/hjcrm/system/bean/User.class
+515  DEBUG [2019-12-06 20:52:49]  Reader entry: ����   4 �
+515  DEBUG [2019-12-06 20:52:49]  Checking to see if class com.hjcrm.system.bean.Dept matches criteria [is assignable to Object]
+515  DEBUG [2019-12-06 20:52:49]  Checking to see if class com.hjcrm.system.bean.Menu matches criteria [is assignable to Object]
+515  DEBUG [2019-12-06 20:52:49]  Checking to see if class com.hjcrm.system.bean.Role matches criteria [is assignable to Object]
+519  DEBUG [2019-12-06 20:52:49]  Checking to see if class com.hjcrm.system.bean.User matches criteria [is assignable to Object]
+519  DEBUG [2019-12-06 20:52:49]  Parsed configuration file: 'class path resource [mybatis-config.xml]'
+523  DEBUG [2019-12-06 20:52:49]  Property 'mapperLocations' was not specified or no matching resources found
+527  DEBUG [2019-12-06 20:52:49]  Finished creating instance of bean 'sqlSessionFactory'
+531  DEBUG [2019-12-06 20:52:49]  Invoking afterPropertiesSet() on bean with name 'deptDao'
+570  DEBUG [2019-12-06 20:52:50]  Finished creating instance of bean 'deptDao'
+574  DEBUG [2019-12-06 20:52:50]  Creating shared instance of singleton bean 'menuDao'
+574  DEBUG [2019-12-06 20:52:50]  Creating instance of bean 'menuDao'
+574  DEBUG [2019-12-06 20:52:50]  Eagerly caching bean 'menuDao' to allow for resolving potential circular references
+574  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'sqlSessionFactory'
+574  DEBUG [2019-12-06 20:52:50]  Invoking afterPropertiesSet() on bean with name 'menuDao'
+585  DEBUG [2019-12-06 20:52:50]  Finished creating instance of bean 'menuDao'
+589  DEBUG [2019-12-06 20:52:50]  Creating shared instance of singleton bean 'roleDao'
+589  DEBUG [2019-12-06 20:52:50]  Creating instance of bean 'roleDao'
+589  DEBUG [2019-12-06 20:52:50]  Eagerly caching bean 'roleDao' to allow for resolving potential circular references
+589  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'sqlSessionFactory'
+589  DEBUG [2019-12-06 20:52:50]  Invoking afterPropertiesSet() on bean with name 'roleDao'
+601  DEBUG [2019-12-06 20:52:50]  Finished creating instance of bean 'roleDao'
+601  DEBUG [2019-12-06 20:52:50]  Creating shared instance of singleton bean 'userDao'
+601  DEBUG [2019-12-06 20:52:50]  Creating instance of bean 'userDao'
+601  DEBUG [2019-12-06 20:52:50]  Eagerly caching bean 'userDao' to allow for resolving potential circular references
+601  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'sqlSessionFactory'
+601  DEBUG [2019-12-06 20:52:50]  Invoking afterPropertiesSet() on bean with name 'userDao'
+644  DEBUG [2019-12-06 20:52:50]  Finished creating instance of bean 'userDao'
+648  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'deptDao'
+648  DEBUG [2019-12-06 20:52:50]  Autowiring by type from bean name 'deptService' to bean named 'deptDao'
+652  DEBUG [2019-12-06 20:52:50]  Processing injected element of bean 'deptService': AutowiredFieldElement for private com.hjcrm.system.dao.RoleDao com.hjcrm.system.service.impl.DeptServiceImpl.roleDao
+652  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'roleDao'
+652  DEBUG [2019-12-06 20:52:50]  Autowiring by type from bean name 'deptService' to bean named 'roleDao'
+652  DEBUG [2019-12-06 20:52:50]  Finished creating instance of bean 'deptService'
+652  DEBUG [2019-12-06 20:52:50]  Creating shared instance of singleton bean 'menuService'
+652  DEBUG [2019-12-06 20:52:50]  Creating instance of bean 'menuService'
+656  DEBUG [2019-12-06 20:52:50]  Registered injected element on class [com.hjcrm.system.service.impl.MenuServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.MenuDao com.hjcrm.system.service.impl.MenuServiceImpl.menuDao
+656  DEBUG [2019-12-06 20:52:50]  Eagerly caching bean 'menuService' to allow for resolving potential circular references
+660  DEBUG [2019-12-06 20:52:50]  Processing injected element of bean 'menuService': AutowiredFieldElement for private com.hjcrm.system.dao.MenuDao com.hjcrm.system.service.impl.MenuServiceImpl.menuDao
+660  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'menuDao'
+660  DEBUG [2019-12-06 20:52:50]  Autowiring by type from bean name 'menuService' to bean named 'menuDao'
+660  DEBUG [2019-12-06 20:52:50]  Finished creating instance of bean 'menuService'
+660  DEBUG [2019-12-06 20:52:50]  Creating shared instance of singleton bean 'userService'
+660  DEBUG [2019-12-06 20:52:50]  Creating instance of bean 'userService'
+664  DEBUG [2019-12-06 20:52:50]  Registered injected element on class [com.hjcrm.system.service.impl.UserServiceImpl]: AutowiredFieldElement for private com.hjcrm.system.dao.UserDao com.hjcrm.system.service.impl.UserServiceImpl.userDao
+664  DEBUG [2019-12-06 20:52:50]  Eagerly caching bean 'userService' to allow for resolving potential circular references
+664  DEBUG [2019-12-06 20:52:50]  Processing injected element of bean 'userService': AutowiredFieldElement for private com.hjcrm.system.dao.UserDao com.hjcrm.system.service.impl.UserServiceImpl.userDao
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'userDao'
+667  DEBUG [2019-12-06 20:52:50]  Autowiring by type from bean name 'userService' to bean named 'userDao'
+667  DEBUG [2019-12-06 20:52:50]  Finished creating instance of bean 'userService'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'dataSource'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'sqlSessionFactory'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'mapperScanner'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'deptDao'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'menuDao'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'roleDao'
+667  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'userDao'
+671  DEBUG [2019-12-06 20:52:50]  Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@62ddbd7e]
+671  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'lifecycleProcessor'
+679  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'sqlSessionFactory'
+683  DEBUG [2019-12-06 20:52:50]  Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+683  DEBUG [2019-12-06 20:52:50]  Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+683  DEBUG [2019-12-06 20:52:50]  Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+683  DEBUG [2019-12-06 20:52:50]  Returning cached instance of singleton bean 'roleDao'
+710  DEBUG [2019-12-06 20:52:50]  Creating a new SqlSession
+726  DEBUG [2019-12-06 20:52:50]  SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20d525] was not registered for synchronization because synchronization is not active
+738  DEBUG [2019-12-06 20:52:50]  Fetching JDBC Connection from DataSource
+1070 DEBUG [2019-12-06 20:52:50]  JDBC Connection [jdbc:mysql://localhost:3306/hj_crm?useUnicode=true&characterEncoding=utf-8, UserName=root@localhost, MySQL Connector Java] will not be managed by Spring
+1073 DEBUG [2019-12-06 20:52:50]  ==>  Preparing: select r.roleid,r.rolename,d.deptname,group_concat(menuname separator ',') menuname from hj_role r left join hj_role_menu rm on r.roleid = rm.roleid left join hj_menu m on m.menuid=rm.menuid left join hj_dept d on d.deptid=r.deptid group by r.roleid; 
+1097 DEBUG [2019-12-06 20:52:50]  ==> Parameters: 
+1116 DEBUG [2019-12-06 20:52:50]  <==      Total: 54
+1120 DEBUG [2019-12-06 20:52:50]  Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@20d525]
+1120 DEBUG [2019-12-06 20:52:50]  Returning JDBC Connection to DataSource

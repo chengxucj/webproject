@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.dao.ResourceDao">
+    <select id="queryResources" parameterType="java.util.Map" resultType="resource">
+        select resourceId,hj_resource.userid,hj_resource.create_time,hj_resource.state,isZhuanyi,createrName,
+        source,address,resourceName,hj_resource.phone,hj_course.courseName as courseName,hj_user.username belongName,yunYingNote,firstVisitTime,nextVisitTime
+        from hj_resource left join hj_course on hj_resource.courseid=hj_course.courseid left join hj_user on hj_resource.belongid=hj_user.userid where 1=1
+        <if test="userId !=null and userId!=0">
+            and hj_resource.userid=#{userId}
+        </if>
+
+        <if test="belongId!=null and belongId!=0">
+            and hj_resource.belongid=#{belongId}
+        </if>
+        limit #{currentPage},#{pageSize}
+    </select>
+<!--销售部详细信息-->
+    <select id="selectDetailsResource" parameterType="int" resultType="resource">
+       select resourceId,hj_resource.userid,hj_resource.create_time,hj_resource.state,isZhuanyi,createrName,hj_resource.create_time,
+        source,address,resourceName,hj_resource.phone,hj_course.courseName as courseName,hj_user.username belongName,yunYingNote,
+        firstVisitTime,nextVisitTime,assignTime,yunYingNote,hj_resource.email,idCard,tel,weixin,qq,nextVisitTime,xiaoShouNote,resourceLevel
+        from hj_resource left join hj_course on hj_resource.courseid=hj_course.courseid left join hj_user on hj_resource.belongid=hj_user.userid
+         where resourceId=#{resourceId}
+    </select>
+    <!--销售部资源详情 -->
+    <select id="querySalesResource" parameterType="java.util.Map" resultType="resource">
+        select hj_resource.resourceId,assignTime,hj_resource.state,hj_resource.isZhuanyi,resourceLevel,firstVisitTime,v.create_time nearVisitTime,
+        nextVisitTime,source,address,resourceName,phone,hj_course.courseName courseName,yunYingNote,xiaoShouNote,v.visitRecord visitRecord
+        from hj_resource left join hj_course on hj_resource.courseid=hj_course.courseid
+        left join hj_visitrecord v on hj_resource.resourceId=v.resourceId where 1=1
+        <if test="deptid !=null and deptid!=0">
+            and hj_resource.deptid=#{deptid}
+        </if>
+
+        <if test="belongId!=null and belongId!=0">
+            and hj_resource.belongid=#{belongId}
+        </if>
+    </select>
+
+    <select id="queryAllXiaoShou" parameterType="int" resultType="user">
+        select userid,username from hj_user where deptid in(5,7,8,9,10,11,12,13,14,15,16);
+    </select>
+
+    <select id="queryCountRes" resultType="int">
+        select count(resourceId) from  hj_resource;
+    </select>
+
+    <insert id="addResource" parameterType="resource">
+        insert  into hj_resource(resourceId,userid,deptid,create_time,createrName,source,address,resourceName,phone,courseid,yunYingNote,tel,weixin,qq)
+        values(null,#{userid},#{deptid},#{create_time},#{createrName},#{source},#{address},#{resourceName},#{phone},#{courseid},#{yunYingNote},#{tel},#{weixin},#{qq})
+    </insert>
+<!--  更新资源-->
+    <update id="updateResource" parameterType="resource">
+        update hj_resource set
+        source=#{source},address=#{address},resourceName=#{resourceName},
+        phone=#{phone},courseid=#{courseid},yunYingNote=#{yunYingNote},tel=#{tel},
+        weixin=#{weixin},qq=#{qq},
+        <if test="email!=null and email !=''">email=#{email},</if>
+        <if test="idCard!=null and idCard !=''">idCard=#{idCard},</if>
+        <if test="nextVisitTime!=null and nextVisitTime !=''">nextVisitTime=#{nextVisitTime},</if>
+        <if test="xiaoShouNote!=null and xiaoShouNote !=''">xiaoShouNote=#{xiaoShouNote},</if>
+        resourceLevel=#{resourceLevel} where resourceId=#{resourceId}
+    </update>
+<!--分配资源-->
+    <update id="assigntoResource">
+        update hj_resource set belongid=#{belongid},state=1,assignTime=#{assigntime},deptid=#{deptid} where resourceId in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="queryDeptidByuserId" parameterType="int" resultType="int">
+        select hj_user.deptid from  hj_user where userid=#{userid}
+    </select>
+
+<!-- 根据资源id查询资源  -->
+    <select id="queryResourceByid" parameterType="int" resultType="resource">
+        select * from  hj_resource where resourceId=#{resourceId}
+    </select>
+
+    <update id="updateStateById" parameterType="int">
+        update hj_resource set  isStudent=1,state=2 where resourceId=#{resourceid}
+    </update>
+
+    <select id="queryResourceState" parameterType="int" resultType="java.lang.Integer">
+        select hj_resource.state from hj_resource where  resourceId=#{rid}
+    </select>
+    
+    <delete id="deleteResources" parameterType="java.util.List">
+        delete from  hj_resource where resourceId in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

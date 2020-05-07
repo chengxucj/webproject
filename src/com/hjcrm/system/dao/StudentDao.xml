@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.dao.StudentDao">
+    <!-- 新增学员-->
+    <insert id="addStudent" parameterType="student">
+        insert into hj_student(
+        userid,resourceId,belongid,studentName,phone,tel,weixin,qq,idCard,address,preferinfo,
+        email,studentstate,isHaveCourse,resourceLevel,ishavenetedu,isOnlineBuy,netedumoney,remituser,dealprice,dealtime
+        )
+        values(
+        #{userid},#{resourceId},#{belongid},#{studentName}
+        ,#{phone},#{tel},#{weixin},#{qq},#{idCard},
+        #{address},#{preferinfo},#{email},0,0,#{resourceLevel},#{ishavenetedu},#{isOnlineBuy},
+        #{netedumoney},#{remituser},#{dealprice},#{dealtime})
+    </insert>
+<!--    根据资源id查询学员id-->
+    <select id="selectStudentidByRid" parameterType="int" resultType="int">
+        select hj_student.studentId from  hj_student where resourceId=#{rid}
+    </select>
+
+<!--行政部学员操作    -->
+    <select id="queryStudents" parameterType="com.hjcrm.publics.utils.PageBean" resultType="student">
+        select * from hj_student where studentstate!=8
+        <if test="currentPage !=null and currentPage!=0">
+            limit #{currentPage},#{pageSize}
+        </if>
+    </select>
+    <!--    把学员状态改为退回-->
+    <update id="returnStudent" parameterType="java.util.Map">
+        update hj_student set studentstate=8,returnNote=#{returnNote}
+        where studentId in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+<!--    把学员状态改为提交-->
+    <update id="studentCommit" parameterType="java.util.List">
+        update hj_student set studentstate=4
+        where studentId in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+    <!--   查询计数-->
+    <select id="queryCountStudent" resultType="int">
+        select count(hj_student.studentId) from hj_student where studentstate!=8
+    </select>
+
+    <select id="querySalesStudents" resultType="student">
+        select * from hj_student where studentstate=8
+        <if test="currentPage !=null and currentPage!=0">
+            limit #{currentPage},#{pageSize}
+        </if>
+
+    </select>
+    <!--  查询全部已为学员的信息-->
+    <select id="queryYesStudentMatchinfo" parameterType="com.hjcrm.publics.utils.PageBean" resultType="student">
+        select * from hj_student
+        limit #{currentPage},#{pageSize}
+    </select>
+
+    <select id="queryCountYesStudent" resultType="int">
+        select count(studentId) from hj_student
+    </select>
+</mapper>
